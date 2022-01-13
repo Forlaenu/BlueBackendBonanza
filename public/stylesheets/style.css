@@ -1,8 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
-a {
-  color: #00B7FF;
+body {
+  background-image:url('../img/books-background.jpeg');
+}
+.button.is-primary {
+  background-color: B7B7A4 !important;
+}
+.navbar {
+  background-color: FFE8D6 !important;
+  font-family: 'Courier New', Courier, monospace !important;
 }
