@@ -1,9 +1,102 @@
 var express = require('express');
+const db = require('../models');
 var router = express.Router();
+const crypt = require('bcrypt')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+// POST /users/register
+router.post('/register', function(req, res, next) {
+  // TODO: check for required fields
+  if (!req.body.username || !req.body.password) {
+    res.status(400).json({
+      error: 'please include all required fields'
+    })
+    return
+  }
+
+  db.User.findAll({
+    where: {
+      username: req.body.username
+    }
+  }).then(users =>  {
+    // if there is an existing user
+    if (users.length) {
+      // send error response
+      res.status(400).json({
+        error: 'username already exists'
+      })
+    } 
+    else {
+      // hash password
+      crypt.hash(req.body.password, 10).then(hash => {
+        db.User.create({
+          username: req.body.username,
+          password: hash
+        })
+        .then(user => {
+          res.status(200).json(user)
+        })
+      })
+    }
+  })
 });
+
+// POST /users/login
+router.post('/login', (req, res) =>{
+  //check for required fields
+  if (!req.body.username || !req.body.password) {
+    res.status(400).json({
+      error: 'please include all required fields'
+    })
+    return
+  }
+  //check for user in database
+  db.User.findOne({
+    where: {
+      username: req.body.username
+    }
+  }).then(user =>  {
+    // if there is no existing user
+    if(!user) {
+      //send error
+      res.status(404).json({error: 'no user with that username found'})
+      return
+    }
+    // check the password against the hash
+    crypt.compare(req.body.password, user.password)
+      .then(match => {
+        if(!match){
+          res.status(401).json({error: 'incorrect password'})
+          return
+        }
+        //set the user on the session
+        req.session.user = user
+        res.json(user)
+      })
+  })
+})
+
+// GET /users/logout
+router.get('/logout', (req,res) =>{
+  req.session.user = null;
+  res.status(200).json({
+    success: 'user logged out'
+  })
+})
+
+// GET /users/#/Profile
+router.get('/:userId/Profile', (req, res)=>{
+  db.User.findByPk(req.params.userId, {
+    attributes: ['name'],
+    include: {
+      model: db.Listing,
+      include: db.Book
+    }
+  })
+    .then(user=>{
+      //handle missing and success
+      if(!user){res.status(404).json({error: 'could not find user with that id'}); return}
+      res.json(user)
+    })
+})
 
 module.exports = router;
