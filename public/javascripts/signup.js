@@ -5,6 +5,11 @@ registerForm.addEventListener('submit', (e) => {
     axios.post('/users/register', {
         username: document.querySelector('#username').value,
         password: document.querySelector('#password').value
+    }).then(res => {
+        alert("User created Successfully")
+    })
+    .catch(error =>{
+        console.log(error.response)
+        alert(error.response.data.error || "something went wrong")
     })
 })
-
