@@ -1,23 +1,12 @@
-
 <html>
 
 <head>
-    <title>Document</title>
+    <title>Express</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-    
-    <!-- <nav class="navbar navbar-light bg-light mb-3">
-    <div class="container-fluid">
-      <h1 class="fs-5 m-0"><a class="navbar-brand" href="/index.html">Restaurants!</a></h1>
-      <div class="d-flex">
-        <a class="btn btn-primary me-2 d-none logged-out-only" href="/login.html">Login</a>
-        <a class="btn btn-outline-primary d-none logged-out-only" href="/register.html">Register</a>
-        <button class="btn btn-outline-primary d-none logout-button logged-in-only">Logout</button>
-      </div>
-    </div>
-  </nav> -->
+    <!-- navbar -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
@@ -78,38 +67,23 @@
             </div>
         </div>
     </nav>
-    <!-- form to login -->
-    <div id="loginDiv">
-        <form id="loginForm">
-            <h1>Login to (you)sedbooks!</h1>
+    <!-- form to sign up -->
+    <div id="registerDiv">
+        <form id="registerForm">
+            <h1>Register With (you)sedbooks!</h1>
             <p>
-                <label for="username">Username</label>
-                <input type="username" id="username" required />
+                <label for="name">Username</label>
+                <input type="text" id="username" required />
             </p>
             <p>
                 <label for="password">Password</label>
                 <input type="password" id="password" required />
             </p>
-            <button class="button is-light is-small" type="submit">Login</button>
+            <button type="submit">Register</button>
         </form>
     </div>
-  </nav>
-  <div class="container-fluid">
-    <form id="loginForm">
-      <p>
-        <label for="username">Username</label>
-        <input type="name" id="name" required />
-      </p>
-      <p>
-        <label for="password">Password</label>
-        <input type="password" id="password" required />
-      </p>
-      <button type="submit">Login</button>
-    </form>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/javascripts/login.js"></script>
-  <script src="/javascripts/user.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./javascripts/signup.js"></script>
 </body>
 
 </html>
