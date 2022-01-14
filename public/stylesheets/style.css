@@ -1,10 +1,22 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
 body {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
   background-image:url('../img/books-background.jpeg');
 }
+
+/* .container {
+  display: flexbox;
+  margin:auto;
+  justify-content: center;
+  align-items: center;
+} */
+
 .button.is-primary {
   background-color: B7B7A4 !important;
+  font-family: 'Courier New', Courier, monospace !important;
 }
 h1 {
   font-size: xx-large;
@@ -28,3 +40,25 @@ h1 {
   justify-self: center;
 
 }
+
+#loginForm {
+ 
+  margin:auto;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: larger;
+  color: ffe8d6;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 300px;
+  background-color: 6B705C;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+#loginDiv {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center; 
+  justify-self: center;
+}
+
