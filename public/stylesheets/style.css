@@ -6,7 +6,25 @@ body {
 .button.is-primary {
   background-color: B7B7A4 !important;
 }
+h1 {
+  font-size: xx-large;
+  font-weight: bolder;
+}
 .navbar {
   background-color: FFE8D6 !important;
   font-family: 'Courier New', Courier, monospace !important;
+}
+
+#registerForm {
+  font-size: larger;
+  color: ffe8d6;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 300px;
+}
+#registerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  justify-self: center;
+
 }
