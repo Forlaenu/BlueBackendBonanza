@@ -10,6 +10,7 @@ const store = new sequelizeSession({ db: db.sequelize })
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var listingRouter = require('./routes/listings');
 
 var app = express();
 
@@ -35,5 +36,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/listings', listingRouter);
 
 module.exports = app;
