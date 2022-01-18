@@ -6,4 +6,8 @@ wiki()
 	.then(summary => {
 		let trimmed = summary.substring(0, 500) + "...";
 		console.log(trimmed)
-	}); 
+	});
+
+module.exports = {
+    wiki
+}

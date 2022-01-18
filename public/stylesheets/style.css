@@ -18,9 +18,30 @@ body {
   background-color: #B7B7A4 !important;
 }
 
+
 h1 {
   font-size: xx-large;
   font-weight: bolder;
+  color: inherit  !important;
+}
+
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  color: inherit !important;
+}
+
+.title-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #B7B7A4;
+  color: #FFE8D6;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  margin: 10px auto 0;
 }
 
 .navbar {
@@ -163,6 +184,25 @@ h1 {
 
 .is-info {
   background-color: 80c2af !important;
+}
+
+.tile.is-ancestor {
+ padding-top: 200px;
+}
+
+.tile.is-child.box {
+  background-color: #B7B7A4;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+footer {
+  margin: 10px 10px 10px 10px;
 }
 
 .card-footer-item {
