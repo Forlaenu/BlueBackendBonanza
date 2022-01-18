@@ -19,6 +19,7 @@
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",
     "sequelize": "^6.13.0",
-    "sequelize-cli": "^6.3.0"
+    "sequelize-cli": "^6.3.0",
+    "wikijs": "^6.3.3"
   }
 }
