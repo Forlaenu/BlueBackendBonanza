@@ -68,8 +68,18 @@
         </div>
     </nav>
     <!-- form to sign up -->
+    <div class="field has-addons" id="container-fluid">
+        <div class="control">
+            <input class="input" type="text" placeholder="Find a book">
+        </div>
+        <div class="control">
+            <a class="button is-info">
+                Search
+            </a>
+        </div>
+    </div>
     <div id="container-fluid">
-        <div id="listings"></div>
+
         <div class="d-none logged-in-only">
             <form id="listingForm">
                 <h1>Add a listing</h1>
@@ -97,94 +107,119 @@
             </form>
         </div>
     </div>
-    <div class="columns">
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="img/love_in_the_time_of_cholera.jpeg" alt="Placeholder image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="img/mayra_user_pic.JPG" alt="Placeholder image">
+    <div class="container">
+        <div id="listings">
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url(img/love_in_the_time_of_cholera.jpeg);">
+                            <figure class="image is-4by3">
+                                <img src="img/love_in_the_time_of_cholera.jpeg" class="has-ratio"
+                                    alt="Placeholder image">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-4">Love in the Time of Cholera</p>
-                            <p class="subtitle is-6">Gabriel Garcia Marquez</p>
-                            <a>@mayra84</a>
-                        </div>
-                    </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="img/mayra_user_pic.JPG" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Love in the Time of Cholera</p>
+                                    <p class="subtitle is-6">Gabriel Garcia Marquez</p>
+                                    <!-- <a>@mayra84</a> -->
+                                </div>
+                            </div>
 
-                    <div class="content">
-                        Description of the book. 
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">Date listing was created</time>
+                            <div class="content">
+                                <div class="own">
+                                    Own or nah
+                                </div>
+                                <div class="condition">
+                                    1-5 condition
+                                </div>
+                                <div class="frontUrl">url for images?</div>
+                                <div class="backUrl">url for images?</div>
+                                <div class="spineUrl">url for images?</div>
+                                <br>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item edit">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            <p class="subtitle is-6">@johnsmith</p>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="https://bulma.io/images/placeholders/96x96.png"
+                                            alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">John Smith</p>
+                                    <p class="subtitle is-6">@johnsmith</p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                                <a href="#">#css</a> <a href="#">#responsive</a>
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            <p class="subtitle is-6">@johnsmith</p>
-                        </div>
-                    </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="https://bulma.io/images/placeholders/96x96.png"
+                                            alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">John Smith</p>
+                                    <p class="subtitle is-6">@johnsmith</p>
+                                </div>
+                            </div>
 
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                                <a href="#">#css</a> <a href="#">#responsive</a>
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
                     </div>
                 </div>
             </div>
@@ -194,6 +229,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="./javascripts/signup.js"></script>
 </body>
+
 </html>
 
 
