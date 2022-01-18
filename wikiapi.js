@@ -1,6 +1,6 @@
 const wiki = require('wikijs').default;
 
- wiki() 
+wiki()
 	.page('Toni Morrison')
 	.then(page => page.summary())
 	.then(summary => {
@@ -11,4 +11,3 @@ const wiki = require('wikijs').default;
 module.exports = {
     wiki
 }
-
