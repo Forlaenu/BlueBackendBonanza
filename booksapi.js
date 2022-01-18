@@ -14,7 +14,17 @@ function search(term) {
         })
 }
 
+function searchId(apiId) {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes/${apiId}`, {
+        params: {
+            key: process.env.GOOGLE_API_KEY,
+        }
+    })
+       .then(res => {
+           return (res.data) || []
+       })
+}
 
 module.exports = {
-    search
+    search, searchId
 }

@@ -4,7 +4,7 @@ const db = require('../models');
 const router = express.Router();
 
 
-// get listings
+// POST /listings/create
 router.post('/create', (req, res, next) => {
     db.Listing.findAll({
         where: { UserId: req.body.UserId }
