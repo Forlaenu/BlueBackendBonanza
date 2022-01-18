@@ -1,7 +1,7 @@
 var express = require('express');
 const db = require('../models');
 var router = express.Router();
-const crypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 
 // POST /users/register
 router.post('/register', function(req, res, next) {
@@ -27,7 +27,7 @@ router.post('/register', function(req, res, next) {
     } 
     else {
       // hash password
-      crypt.hash(req.body.password, 10).then(hash => {
+      bcrypt.hash(req.body.password, 10).then(hash => {
         db.User.create({
           username: req.body.username,
           password: hash
@@ -62,7 +62,7 @@ router.post('/login', (req, res) =>{
       return
     }
     // check the password against the hash
-    crypt.compare(req.body.password, user.password)
+    bcrypt.compare(req.body.password, user.password)
       .then(match => {
         if(!match){
           res.status(401).json({error: 'incorrect password'})
@@ -98,5 +98,31 @@ router.get('/:userId/Profile', (req, res)=>{
       res.json(user)
     })
 })
+
+
+
+
+
+
+
+
+
+router.get('/:userId/Profile/listing', (req, res)=>{
+  db.User.findByPk(req.params.userId, {
+    attributes: ['name'],
+    include: {
+      model: db.Listing,
+      include: db.Book
+    }
+  })
+    .then(user=>{
+      //handle missing and success
+      if(!user){res.status(404).json({error: 'could not find user with that id'}); return}
+      res.json(user)
+    })
+})
+
+
+
 
 module.exports = router;
