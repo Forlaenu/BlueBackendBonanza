@@ -25,6 +25,19 @@ function searchId(apiId) {
        })
 }
 
+function searchisbn(isbn) {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes`, {
+        params: {
+            key: process.env.GOOGLE_API_KEY,
+            q: `+isbn:${isbn}`
+            
+        }
+    })
+       .then(res => {
+           return (res.data) || []
+       })
+}
+
 module.exports = {
-    search, searchId
+    search, searchId, searchisbn
 }
