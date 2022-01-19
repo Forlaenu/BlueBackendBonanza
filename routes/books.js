@@ -5,6 +5,7 @@ const crypt = require('bcrypt')
 const axios = require('axios')
 const booksapi = require('../booksapi');
 const { get, redirect } = require('express/lib/response');
+const { getSummary } = require('../wikiapi');
 
 // GET /api/v1/books - searches for books and returns to client (frontend) (previously search)
 // GET /api/v1/books/:googleId - get book by id from google API
@@ -33,6 +34,14 @@ router.get('/', (req,res,next)=> {
     res.status(200).json(apiBooks)
   })// end .then on booksapi.search
 })// end router.get
+
+//Get summary of author
+router.get('/AOTD', (req, res) => {
+  getSummary('Toni Morrison')
+  .then(summary => {
+    res.json(summary)
+  })
+})
 
 // GET /books/:apiId
 router.get('/:apiId', (req,res,next)=> {
@@ -95,5 +104,7 @@ router.get('/:apiId/listings/:listingId', (req,res,next) => {
     }
   })
 })
+
+
 
 module.exports = router;

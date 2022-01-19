@@ -18,6 +18,7 @@ listingForm.addEventListener('submit', (e) => {
 })
 
 
+
 function renderBookInfo(listings) {
     const bookHtml = listings.map(listing => {
         return `

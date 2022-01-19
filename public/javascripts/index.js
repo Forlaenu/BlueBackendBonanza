@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     // code here will execute after the document is loaded
+    axios.get('/books/AOTD')
+    .then(res => {
+        renderAuthorOfTheWeek(res.data)
+    })
   });
   
   function renderBooksOfTheWeek(books) {
@@ -11,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="box">
         Top Books of the Week
         <ol>
-          <li>${books.Title}</li>
+          <li>${books.title}</li>
         </ol>
       </div>
     </article>`
@@ -21,23 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // come back to this one
-function renderAuthorOfTheWeek(books) {
-    const authorsHtmlArray = books.map((book) => {
-        console.log(books.author)
-        return `
-        <article class="tile is-child box">
-        <!-- Put any content you want -->
-        <article class="message">
-          <div class="message-body">
+function renderAuthorOfTheWeek(author) {
+    const authorsHtml =  `
             <h1>Author of the Week!</h1>
-            ${book.wiki} 
-          </div>
-        </article>
-      </article>
+            <h2>${author.name}</h2>
+            <p>${author.summary}</p> 
         `
-    });
-    results.innerHTML = authorsHtmlArray.join('');
+    document.querySelector('#AOTD').innerHTML = authorsHtml
 }
+
 
 function renderBookOfTheWeek(books) {
     const bookHtmlArray = book.map((book) => {
