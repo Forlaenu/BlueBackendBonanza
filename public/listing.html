@@ -69,11 +69,11 @@
     </nav>
     <!-- form to sign up -->
     <div class="field has-addons" id="container-fluid">
-        <div class="control">
+        <div class="control searchBar">
             <input class="input" type="text" placeholder="Find a book">
         </div>
         <div class="control">
-            <a class="button is-info">
+            <a type="submit" class="button is-info" id="searchButton">
                 Search
             </a>
         </div>
@@ -85,32 +85,67 @@
                 <h1>Add a listing</h1>
                 <p>
                     <label for="name">Own?</label>
-                    <input type="text" id="username" required />
+                    <input type="text" id="own" required />
                 </p>
+                <br>
                 <p>
                     <label for="name">Condition</label>
-                    <input type="" id="username" required />
+                    <input type="" id="condition" required />
                 </p>
+                <br>
                 <p>
-                    <label for="password">Book Front Picture</label>
-                    <input type="password" id="password" required />
+                    <div class="file is-right is-small">
+                        <label class="file-label" id="bookPicLabel">Book Front Picture  </label>
+                          <input class="file-input" type="file" name="resume" id="frontUrl" required>
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Choose a file…
+                            </span>
+                          </span>
+                      </div>
                 </p>
+                <br>
                 <p>
-                    <label for="password">Book Back Picture</label>
-                    <input type="password" id="password" required />
+                    <div class="file is-right is-small">
+                        <label class="file-label" id="bookPicLabel">Book Back Picture  </label>
+                          <input class="file-input" type="file" name="resume" id="backUrl"required>
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Choose a file…
+                            </span>
+                          </span>
+                      </div>
                 </p>
+                <br>
                 <p>
-                    <label for="password">Book Spine Picture</label>
-                    <input type="password" id="password" required />
+                    <div class="file is-right is-small">
+                        <label class="file-label" id="bookPicLabel">Book Spine Picture  </label>
+                          <input class="file-input" type="file" name="resume" id="spineUrl"required>
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Choose a file…
+                            </span>
+                          </span>
+                      </div>
                 </p>
+                <br>
                 <button class="button is-light is-small" type="submit">Submit</button>
             </form>
         </div>
     </div>
     <div class="container">
         <div id="listings">
-            <div class="columns">
-                <div class="column">
+            <div class="columns" >
+                <div class="column is-one-quarter">
                     <div class="card">
                         <div class="card-image" style="background-image: url(img/love_in_the_time_of_cholera.jpeg);">
                             <figure class="image is-4by3">
@@ -227,38 +262,7 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="./javascripts/signup.js"></script>
+<script src="./javascripts/listing.js"></script>
 </body>
 
 </html>
-
-
-<!-- <span class="icon-text has-text-info">
-    <span class="icon">
-      <i class="fas fa-info-circle"></i>
-    </span>
-    <span>Info</span>
-  </span>
-  
-  <span class="icon-text has-text-success">
-    <span class="icon">
-      <i class="fas fa-check-square"></i>
-    </span>
-    <span>Success</span>
-  </span>
-  
-  <span class="icon-text has-text-warning">
-    <span class="icon">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-    <span>Warning</span>
-  </span>
-  
-  <span class="icon-text has-text-danger">
-    <span class="icon">
-      <i class="fas fa-ban"></i>
-    </span>
-    <span>Danger</span>
-  </span>
-
-   -->

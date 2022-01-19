@@ -171,7 +171,13 @@ h2 {
 }
 
 .columns {
-  padding-top: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  /* justify-content: space-around; */
 }
 
 .column {
@@ -201,13 +207,21 @@ img {
   align-content: center;
 }
 
-footer {
+/* UNCOMMENT WHEN DISCUSSED WITH TEAM */
+/* footer {
   margin: 10px 10px 10px 10px;
-}
+} */
 
 .card-footer-item {
   border-style:solid;
   border-radius: 0px 0px 0px 0px;
   border-width: 2px;
   border-color: #B7B7A4;
+}
+#searchButton {
+  /* background-color: antiquewhite !important; */
+}
+
+#bookPicLabel {
+  font-size: 19.2px;
 }
