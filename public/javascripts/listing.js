@@ -11,35 +11,6 @@ listingForm.addEventListener('submit', (e) => {
 
 })
 
-function renderListings(listings) {
-    const html = listings.map(listing => {
-        return `<div>
-        <div>${listing.text}</div>
-        <div>${listing.stars}/5 stars</div>
-        <div>${listing.visitedAt}</div>
-      </div>`
-    }).join('')
-    document.querySelector('#listings').innerHTML = html
-}
-
-function renderMovies(movies) {
-    const movieHtmlArray = movies.map(function (currentMovie) {
-        return `<div class="movie col-4">
-        <img src="${currentMovie.Poster}"<br/>
-        <h2>${currentMovie.Title}</h2>
-        <time datetime="\`0001\`">${currentMovie.Year}</time><br>
-        <button class="add-button" data-imdbid="${currentMovie.imdbID}">Add Me!</button><br/>
-        </div>
-        `
-    });
-
-    results = document.querySelector("#results");
-    results.innerHTML = movieHtmlArray.join('')
-};
-
-
-
-
 function renderBookInfo(books) {
     const html = books.map(book => {
         return `<div>
@@ -55,7 +26,7 @@ function renderBookInfo(books) {
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-48x48">
-                                        <img src="${}" alt="Placeholder image">
+                                        <img src="${book.imgUrl}" alt="Placeholder image">
                                     </figure>
                                 </div>
                                 <div class="media-content">
