@@ -86,7 +86,7 @@ router.get('/logout', (req,res) =>{
 // GET /users/#/Profile
 router.get('/:userId/Profile', (req, res)=>{
   db.User.findByPk(req.params.userId, {
-    attributes: ['name'],
+    attributes: ['username'],
     include: {
       model: db.Listing,
       include: db.Book
@@ -102,7 +102,7 @@ router.get('/:userId/Profile', (req, res)=>{
 // GET /users/#/Profile 
 router.get('/:userId/Profile/listing', (req, res)=>{
   db.User.findByPk(req.params.userId, {
-    attributes: ['name'],
+    attributes: ['username'],
     include: {
       model: db.Listing,
       include: db.Book
