@@ -100,7 +100,7 @@ router.get('/:userId/Profile', (req, res)=>{
 })
 
 // GET /users/#/Profile 
-router.get('/:userId/Profile/listing', (req, res)=>{
+router.get('/${user}/Profile', (req, res)=>{
   db.User.findByPk(req.params.userId, {
     attributes: ['username'],
     include: {

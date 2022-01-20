@@ -1,14 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-    axios.get('/users/userProfile')
-    .then(res => {
-        renderUserInfo(res.data.results.username)
-    })
-})
-
-
-function renderUserInfo(user) {
-    const usersHtml =  `
-    <p class="subtitle is-6">${users.username}</p> 
-        `
-    document.querySelector('#userProfile').innerHTML = usersHtml
+const user = JSON.parse(window.localStorage.getItem('user'))
+if (user){
+    const loggedInUser = document.getElementById('username-profile')
+    loggedInUser.innerHTML = "@" + user.username
 }
+
+axios.get(`/users/${user.id}/Profile/`)
+    .then(res => {
+        console.log
+    })
