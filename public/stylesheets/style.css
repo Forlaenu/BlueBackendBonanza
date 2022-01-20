@@ -256,3 +256,7 @@ img {
   height: 100%;
   backdrop-filter: blur(10px);
 }
+
+#counter {
+  background-color:#ffe8d6;
+}
