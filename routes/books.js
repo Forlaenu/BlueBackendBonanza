@@ -198,29 +198,43 @@ router.post('/:apiId/listing', (req,res,next) => {
       } // end if not book found
       else {
         // console.log("book found in DB. Creating listing based on that book")
-          db.Listing.create({
-            own: req.body.own || false,
-            BookId: foundBook.id,
+        // check if there is a listing already for that user and book id
+        db.Listing.findAll({
+          where: {
             UserId: req.body.UserId,
-            // added this -mayra
-            condition: req.body.condition || null,
-            frontUrl: req.body.frontUrl || null,
-            backUrl: req.body.backUrl || null,
-            spineUrl: req.body.spineUrl || null,
-            createdAt: new Date(),
-            updatedAt: new Date()
-          }) // end db.listing.create
-          .then(resultListing => {
-            // console.log("DB book listing created successfully")
-            res.status(200).json({success: `Listing created from database book: ${foundBook.title}, listingId: ${resultListing.id}, with userId: ${req.body.UserId}`})
-          }) //end .then db.Listing.create
-      }
-    })
-    // update this error in the future
+            BookId: foundBook.id
+          }
+         })
+        .then(listing => {
+          if (listing) {
+            res.status(400).json({ error: 'Listing already created!' })
+            return
+          }
+          else {
+            db.Listing.create({
+              own: req.body.own || false,
+              BookId: foundBook.id,
+              UserId: req.body.UserId,
+              // added this -mayra
+              condition: req.body.condition || null,
+              frontUrl: req.body.frontUrl || null,
+              backUrl: req.body.backUrl || null,
+              spineUrl: req.body.spineUrl || null,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            }) // end db.listing.create
+            .then(resultListing => {
+              // console.log("DB book listing created successfully")
+              res.status(200).json({success: `Listing created from database book: ${foundBook.title}, listingId: ${resultListing.id}, with userId: ${req.body.UserId}`})
+            }) //end .then db.Listing.create
+          }//end else of if listing exists already
+        })// end .then db.Listing.findAll
+      }// end else of if book not found
+    })// end.then of db.Book.find
     .catch(err => {
       req.status(400).json({error: "something went wrong"})
     })
   }// end if/else required body.elements
-})
+})// end router.post
 
 module.exports = router;
