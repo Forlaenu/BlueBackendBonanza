@@ -17,7 +17,7 @@ const { getTopSellers } = require('../newyorktimesapi');
 
 // Get /books
 // Basic search using book title
-router.get('/', (req,res,next)=> {
+router.post('/', (req,res,next)=> {
   // receive from front end search bar value - this will simply be searching book by title for now
   // check if searchQuery is empty
   if(!req.body.searchQuery){
@@ -181,6 +181,11 @@ router.post('/:apiId/listings', (req,res,next) => {
             own: false,
             BookId: createdBook.id,
             UserId: req.body.userId,
+            // added this- mayra
+            condition: req.body.condition,
+            frontUrl: req.body.frontUrl,
+            backUrl: req.body.backUrl,
+            spineUrl: req.body.spineUrl,
             createdAt: new Date(),
             updatedAt: new Date()
           }) // end db.listing.create
@@ -196,6 +201,11 @@ router.post('/:apiId/listings', (req,res,next) => {
             own: false,
             BookId: foundBook.id,
             UserId: req.body.userId,
+            // added this -mayra
+            condition: req.body.condition,
+            frontUrl: req.body.frontUrl,
+            backUrl: req.body.backUrl,
+            spineUrl: req.body.spineUrl,
             createdAt: new Date(),
             updatedAt: new Date()
           }) // end db.listing.create
