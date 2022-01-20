@@ -1,4 +1,4 @@
-const user = JSON.parse(localStorage.getItem('user'))
+user = JSON.parse(localStorage.getItem('user'))
 
 
 
@@ -15,7 +15,12 @@ document.addEventListener('click', (event)=> {
     if(event.target.classList.contains('add-to-faves')){
         let bookId = event.target.dataset.apiid
         let userId = JSON.parse(window.localStorage.getItem('user')).id
+        // send bookId and userId to createListingFave
         createListingFave(bookId, userId)
+        // disable button
+        event.target.classList.remove("add-to-faves")
+        // and change its text
+        event.target.innerHTML = "Added"
         // document.querySelector('#createListingForm').setAttribute("style", "display:block")
         // axios.get(`/books/${bookId}`)
         // .then(res => {
@@ -44,7 +49,10 @@ function createListingFave(bookId, userId){
                 own: false,
             })
             .then(res => {
-                console.log({success: res})
+                if(res.status = 200){
+                    // display modal
+                    
+                }
             })
         })
         // .catch(error => {res.status(400).json({error: error})})
@@ -76,7 +84,7 @@ function renderBookInfo(listings) {
                             </div>
                             <div class="content">
                             <div class="description">
-                            ${listing.volumeInfo.description}
+                            ${(!("description" in listing.volumeInfo)) ? "No description given" : listing.volumeInfo.description.substring(0, 500)}
                             </div>
                             </div>
                             
@@ -87,7 +95,7 @@ function renderBookInfo(listings) {
                         <button class="button is-inverted card-footer-item add-to-faves" data-apiId="${listing.id}">Add to Faves</button>
                         `:`
                         <button class="button is-inverted card-footer-item createListing" disabled data-apiId="${listing.id}">Create Listing</button>
-                        <button class="button is-inverted card-footer-item addFaves" disabled data-apiId="${listing.id}">Add to Favs</button>
+                        <button class="button is-inverted card-footer-item addFaves" disabled data-apiId="${listing.id}">Add to Faves</button>
                         `}
                         
                             </footer>
@@ -150,21 +158,6 @@ axios.get(`/users/${user.id}/Profile/listing`)
     })
 
 
-
-
-document.addEventListener('DOMContentLoaded', function (event) {
-
-
-    document.addEventListener('click', function (event) {
-        console.log(event.target)
-        if (event.target.classList.contains('createListing')) {
-            let bookID = event.target.dataset.apiid
-            createListing(bookID)
-        }
-    });
-});
-
-
 function createListing(bookID) {
     const listingForm = document.querySelector('#listingForm')
     listingForm.addEventListener('submit', (e) => {
@@ -172,7 +165,6 @@ function createListing(bookID) {
         axios.post()
 
         axios.post('/users/listing', {
-
             own: document.querySelector('#own').value,
             condition: document.querySelector('#condition').value,
             // how to get value of files?
