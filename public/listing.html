@@ -69,18 +69,18 @@
     </nav>
     <!-- form to sign up -->
     <div class="field has-addons" id="container-fluid">
-        <div class="control searchBar">
-            <input class="input" type="text" placeholder="Find a book">
+        <div class="control">
+            <input class="input searchBar" type="text" placeholder="Find a book"/>
         </div>
         <div class="control">
-            <a type="submit" class="button is-info" id="searchButton">
+            <button type="submit" class="button is-info" id="searchButton">
                 Search
-            </a>
+            </button>
         </div>
     </div>
     <div id="container-fluid">
 
-        <div class="d-none logged-in-only">
+        <div class="d-none logged-in-only" style="display:none" id="createListingForm">
             <form id="listingForm">
                 <h1>Add a listing</h1>
                 <p>
