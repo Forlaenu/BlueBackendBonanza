@@ -50,18 +50,6 @@ function createListingFave(bookId, userId){
         // .catch(error => {res.status(400).json({error: error})})
 }
 
-// const listingInfo = `<div class="content">
-// <div class="own">
-//     ${listing.own}
-// </div>
-// <div class="condition">
-//     ${listing.condition}
-// </div>
-// <div class="frontUrl">${listing.frontUrl}</div>
-// <div class="backUrl">${listing.backUrl}</div>
-// <div class="spineUrl">${listing.spineUrl}</div>
-// <br>
-// </div>`
 
 function renderBookInfo(listings) {
     document.querySelector('#listings .columns').innerHTML = "";
