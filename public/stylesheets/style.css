@@ -56,9 +56,21 @@ li {
 }
 
 #registerForm {
+  display: flexbox;
+  margin: 0 auto;
   font-size: larger;
   color: #ffe8d6;
   padding-top: 300px;
+  background-color: #6B705C;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  border-style:solid;
+  border-width: 2px;
+  border-color: #FFE8D6;
+  justify-content: center;
+  text-align:right;
+  align-content: center;
+  align-items: center;
 }
 
 #registerDiv {
@@ -69,8 +81,8 @@ li {
 }
 
 #loginForm {
-  margin:auto;
-  font-size: larger;
+  display: flexbox;
+  margin: 0 auto;
   font-size: larger;
   color: #ffe8d6;
   padding-top: 300px;
@@ -78,7 +90,7 @@ li {
   padding: 20px 20px 20px 20px;
   border-radius: 10px;
   border-style:solid;
-  border-width: 5px;
+  border-width: 2px;
   border-color: #FFE8D6;
   justify-content: center;
   text-align:right;
@@ -169,7 +181,7 @@ li {
   backdrop-filter: blur(10px);
 }
 
-.card-footer {
+.button {
   background-color: antiquewhite;
   /* border-radius: 0px 0px 0px 10px;
   border-style:solid;
@@ -182,17 +194,20 @@ li {
   padding-bottom: 100px;
   display: flex;
   justify-content: center;
-  align-content: center;
-  align-items: center;
+  /* align-content: center;
+  align-items: center; */
+  flex-wrap: wrap;
   /* justify-content: space-around; */
 }
 
 .column {
+  /* height: 100%; */
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-content: center;
+  /* align-content: center;
   align-items: center;
-  
+   */
 }
 
 .is-info {
@@ -220,6 +235,10 @@ img {
 } */
 
 .card-footer-item {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
   border-style:solid;
   border-radius: 0px 0px 0px 0px;
   border-width: 2px;
@@ -232,6 +251,29 @@ img {
 #bookPicLabel {
   font-size: 19.2px;
 }
+
+#addToFavesButton {
+  background: none !important;
+  border:none;
+  padding:0 !important;
+  cursor: pointer;
+}
+
+.button {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+}
+
+#createListing {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+}
+#addFavs {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
 
 .imgauthor  img{
   position: relative;
@@ -259,4 +301,6 @@ img {
 
 #counter {
   background-color:#ffe8d6;
+
 }
+
