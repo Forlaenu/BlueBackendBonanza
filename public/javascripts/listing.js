@@ -9,7 +9,46 @@ const user = JSON.parse(localStorage.getItem('user'))
 
 document.addEventListener('DOMContentLoaded', function () {
     // code here will execute after the document is loaded
+    
 });
+document.addEventListener('click', (event)=> {
+    if(event.target.classList.contains('add-to-faves')){
+        let bookId = event.target.dataset.apiid
+        let userId = JSON.parse(window.localStorage.getItem('user')).id
+        createListingFave(bookId, userId)
+        // document.querySelector('#createListingForm').setAttribute("style", "display:block")
+        // axios.get(`/books/${bookId}`)
+        // .then(res => {
+        //     let booklist = []
+        //     booklist.push(res.data)
+        //     renderBookInfo(booklist)
+        // })
+    }
+
+})
+
+function createListingFave(bookId, userId){
+    console.log(`creating listing from ${bookId}, under user ${userId}`)
+    axios.get(`/books/${bookId}`, {})
+        .then(res => {
+            let userAddedBook = res.data
+            axios.post(`/books/${bookId}/listing`, {
+                // userAddedBook = res.data
+                title: userAddedBook.volumeInfo.title,
+                author: (!("authors" in userAddedBook.volumeInfo)) ? "No Author": userAddedBook.volumeInfo.authors[0],
+                isbn: (!("industryIdentifiers" in userAddedBook.volumeInfo)) ? "N/A" : (userAddedBook.volumeInfo.industryIdentifiers[0].type == "ISBN_13") ? userAddedBook.volumeInfo.industryIdentifiers[0].identifier : userAddedBook.volumeInfo.industryIdentifiers[1].identifier,
+                apiId: userAddedBook.id,
+                imgUrl: (!("imageLinks" in userAddedBook.volumeInfo)) ? "/img/image_not_found.gif" : userAddedBook.volumeInfo.imageLinks.thumbnail,
+                blurb: (!("description" in userAddedBook.volumeInfo)) ? "No description given" : userAddedBook.volumeInfo.description,
+                UserId: userId,
+                own: false,
+            })
+            .then(res => {
+                console.log({success: res})
+            })
+        })
+        // .catch(error => {res.status(400).json({error: error})})
+}
 
 // const listingInfo = `<div class="content">
 // <div class="own">
@@ -25,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // </div>`
 
 function renderBookInfo(listings) {
+    document.querySelector('#listings .columns').innerHTML = "";
     const bookHtml = listings.map(listing => {
         return `
             <div class="column is-4">
@@ -35,7 +75,7 @@ function renderBookInfo(listings) {
                             </figure>
                         </div>
                         <div class="card-content">
-                            <div class="media">
+                            <div class="media"> 
                                 <div class="media-left">
                                     <figure class="image is-48x48">
                                         <img src="${(!("imageLinks" in listing.volumeInfo)) ? src="/img/image_not_found.gif" : listing.volumeInfo.imageLinks.thumbnail}" alt="Placeholder image">
@@ -66,6 +106,7 @@ function renderBookInfo(listings) {
                             </div>
                             </div>
                             `
+
     }).join('')
     document.querySelector('#listings .columns').innerHTML = bookHtml
 }
@@ -95,7 +136,6 @@ function renderListings(listings) {
 const searchButton = document.querySelector("#searchButton");
 searchButton.addEventListener('click', function (event) {
     event.preventDefault();
-
     axios.post('/books/', {
         searchQuery: document.querySelector('.searchBar').value
     })
@@ -114,7 +154,10 @@ searchButton.addEventListener('click', function (event) {
 // }
 axios.get(`/users/${user.id}/Profile/listing`)
     .then(res => {
-        renderBookInfo(res.data.Listings)
+        try{
+            renderBookInfo(res.data.Listings)
+        }
+        catch{console.log("failed to render books in initial page")}
     })
 
 

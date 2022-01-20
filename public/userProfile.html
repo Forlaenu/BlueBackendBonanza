@@ -2,45 +2,44 @@
 
 <head>
   <title>Express</title>
-  <!-- <link rel="stylesheet" href="/stylesheets/style.css"/> -->
-  <link rel="stylesheet" href=" /stylesheets/gradient.css"/>
-  <link rel="stylesheet" href="/stylesheets/userProfile.css"/>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="./stylesheets/gradient.css" />
 </head>
 
 <body>
+  <!-- nav bar -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item gradient-text" href="https://bulma.io">(You)sedBooks
+      <a class="navbar-item gradient-text" href="/index.html">(You)sedBooks
       </a>
-  
+
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-  
+
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a href=index.html class="navbar-item">
           Home
         </a>
-  
-        <a class="navbar-item">
-          Documentation
+
+        <a href=listing.html class="navbar-item">
+          Search
         </a>
-  
+        <a href=userProfile.html class="navbar-item">
+          Profile
+        </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More
           </a>
-  
+
           <div class="navbar-dropdown">
             <a class="navbar-item">
               About
-            </a>
-            <a class="navbar-item">
-              Jobs
             </a>
             <a class="navbar-item">
               Contact
@@ -52,14 +51,14 @@
           </div>
         </div>
       </div>
-  
+
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary">
+            <a href=signup.html class="button is-primary">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light">
+            <a href=login.html class="button is-light">
               Log in
             </a>
           </div>
@@ -67,8 +66,85 @@
       </div>
     </div>
   </nav>
-</body>
-<div class="container">
-  <div class="library-card">content</div>
+  <!-- end of nav -->
+  <!-- header -->
+  <div class="title-circle">
+  <h1> welcome to (You)sedBooks!</h1>
+  <h2>books handled with care.</h2>
+  <h3>past and present</h3>
 </div>
+<!-- page layout -->
+<div id="counter">
+<nav class="level">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Books Owned</p>
+      <p class="title">165</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Wishlist</p>
+      <p class="title">34</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Books Traded</p>
+      <p class="title">11</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Likes</p>
+      <p class="title">789</p>
+    </div>
+  </div>
+</nav>
+</div>
+<!-- end of page layout -->
+<!-- card for user -->
+<div class="card">
+  <div class="card-image">
+    <div class="columns">
+      <div class="column">
+       <img src="/img/love_in_the_time_of_cholera.jpeg">
+      </div>
+      <div class="column">
+        <img src="/img/womeninlove.jpeg">
+      </div>
+      <div class="column">
+      <img src="/img/SongOfSolomon.jpeg">
+      </div>
+      <div class="column">
+        <img src="/img/solitudeprimenumbers.jpeg">
+      </div>
+    </div>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="/img/melol.png">
+        </figure>
+      </div>
+      <div class="media-content">
+        <!-- <p class="title is-4">John Smith</p> -->
+        <p class="subtitle is-6">@dadegunle</p>
+      </div>
+    </div>
+
+    <div class="content">
+      Everything that happens is from now on. <a>@bulmaio</a>.
+      <a href="#">#css</a> <a href="#">#litbutnotthatkindalit</a>
+      <br>
+      <time datetime="2022-19-1">8:28 PM - 19 Jan 2022</time>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/index.js"></script>
+</body>
+
 </html>
