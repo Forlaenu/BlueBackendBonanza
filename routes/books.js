@@ -179,14 +179,14 @@ router.post('/:apiId/listing', (req,res,next) => {
           // createdBook.id = BookId for listing
           // req.body.UserId = UserId for listing
           db.Listing.create({
-            own: false,
+            own: req.body.own || false,
             BookId: createdBook.id,
             UserId: req.body.UserId,
             // added this- mayra
-            condition: req.body.condition,
-            frontUrl: req.body.frontUrl,
-            backUrl: req.body.backUrl,
-            spineUrl: req.body.spineUrl,
+            condition: req.body.condition || null,
+            frontUrl: req.body.frontUrl || null,
+            backUrl: req.body.backUrl || null,
+            spineUrl: req.body.spineUrl || null,
             createdAt: new Date(),
             updatedAt: new Date()
           }) // end db.listing.create
@@ -199,14 +199,14 @@ router.post('/:apiId/listing', (req,res,next) => {
       else {
         // console.log("book found in DB. Creating listing based on that book")
           db.Listing.create({
-            own: false,
+            own: req.body.own || false,
             BookId: foundBook.id,
             UserId: req.body.UserId,
             // added this -mayra
-            condition: req.body.condition,
-            frontUrl: req.body.frontUrl,
-            backUrl: req.body.backUrl,
-            spineUrl: req.body.spineUrl,
+            condition: req.body.condition || null,
+            frontUrl: req.body.frontUrl || null,
+            backUrl: req.body.backUrl || null,
+            spineUrl: req.body.spineUrl || null,
             createdAt: new Date(),
             updatedAt: new Date()
           }) // end db.listing.create

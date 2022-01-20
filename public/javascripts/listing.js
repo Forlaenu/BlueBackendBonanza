@@ -44,7 +44,10 @@ function createListingFave(bookId, userId){
                 own: false,
             })
             .then(res => {
-                console.log({success: res})
+                console.log(res)
+                if(res.status = 200){
+
+                }
             })
         })
         // .catch(error => {res.status(400).json({error: error})})
@@ -88,7 +91,7 @@ function renderBookInfo(listings) {
                             </div>
                             <div class="content">
                             <div class="description">
-                            ${listing.volumeInfo.description}
+                            ${(!("description" in listing.volumeInfo)) ? "No description given" : listing.volumeInfo.description.substring(0, 500)}
                             </div>
                             </div>
                             
@@ -159,21 +162,6 @@ axios.get(`/users/${user.id}/Profile/listing`)
         }
         catch{console.log("failed to render books in initial page")}
     })
-
-
-
-
-document.addEventListener('DOMContentLoaded', function (event) {
-
-
-    document.addEventListener('click', function (event) {
-        console.log(event.target)
-        if (event.target.classList.contains('createListing')) {
-            let bookID = event.target.dataset.apiid
-            createListing(bookID)
-        }
-    });
-});
 
 
 function createListing(bookID) {
