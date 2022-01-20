@@ -95,10 +95,11 @@ function renderBookInfo(listings) {
                         </div>
                         <footer class="card-footer">
                         ${user ? `
-                        <a href="#" class="card-footer-item createListing" data-apiId="${listing.id}">Create Listing</a>
-                        <a href="#" class="card-footer-item addFaves" data-apiId="${listing.id}">Add to Favs</a>
+                        <button class="button is-inverted card-footer-item createListing" data-apiId="${listing.id}">Create Listing</button>
+                        <button class="button is-inverted card-footer-item add-to-faves" data-apiId="${listing.id}">Add to Faves</button>
                         `:`
-                        logged-out
+                        <button class="button is-inverted card-footer-item createListing" disabled data-apiId="${listing.id}">Create Listing</button>
+                        <button class="button is-inverted card-footer-item addFaves" disabled data-apiId="${listing.id}">Add to Favs</button>
                         `}
                         
                             </footer>
