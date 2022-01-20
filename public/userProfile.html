@@ -75,83 +75,93 @@
   <!-- end of nav -->
   <!-- header -->
   <div class="title-circle">
-  <h1> welcome to (You)sedBooks!</h1>
-  <h2>books handled with care.</h2>
-  <h3>past and present</h3>
-</div>
-<!-- page layout -->
-<div id="counter">
-<nav class="level">
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Books Owned</p>
-      <p class="title">165</p>
-    </div>
+    <h1> welcome to (You)sedBooks!</h1>
+    <h2>books handled with care.</h2>
+    <h3>past and present</h3>
   </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Wishlist</p>
-      <p class="title">34</p>
-    </div>
+  <!-- end of header -->
+  <!-- page layout -->
+  <div id="box-smaller">
+  <div class="card">
+  <div id="counter" class="">
+    <nav class="level">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Books Owned</p>
+          <p class="title">165</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Wishlist</p>
+          <p class="title">34</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Books Traded</p>
+          <p class="title">11</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Likes</p>
+          <p class="title">789</p>
+        </div>
+      </div>
+    </nav>
   </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Books Traded</p>
-      <p class="title">11</p>
-    </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Likes</p>
-      <p class="title">789</p>
-    </div>
-  </div>
-</nav>
-</div>
-<!-- end of page layout -->
-<!-- card for user -->
-<div class="card">
-  <div class="card-image">
-    <div class="columns">
-      <div class="column">
-       <img src="/img/love_in_the_time_of_cholera.jpeg">
+  <!-- end of page layout -->
+  <!-- card for user -->
+    <div id="card-profile">
+      <div class="container">
+        <h1 id="no-blur">My Top Picks</h1>
+      <div class="columns" id="profile-listings">
+        <div class="column">
+          <img src="/img/love_in_the_time_of_cholera.jpeg">
+          <h3>title</h3>
+        </div>
+        <div class="column">
+          <img src="/img/womeninlove.jpeg">
+          <h3><title></title></h3>
+        </div>
+        <div class="column">
+          <img src="/img/SongOfSolomon.jpeg">
+          <h3><title></title></h3>
+        </div>
+        <div class="column">
+          <img src="/img/solitudeprimenumbers.jpeg">
+        <h3><title></title></h3>>
       </div>
-      <div class="column">
-        <img src="/img/womeninlove.jpeg">
-      </div>
-      <div class="column">
-      <img src="/img/SongOfSolomon.jpeg">
-      </div>
-      <div class="column">
-        <img src="/img/solitudeprimenumbers.jpeg">
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="/img/melol.png">
-        </figure>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="/img/melol.png">
+          </figure>
+        </div>
+        <div class="media-content">
+          <!-- <p class="title is-4">John Smith</p> -->
+          <p class="subtitle is-6" id="username-profile">@dadegunle</p>
+        </div>
       </div>
-      <div class="media-content">
-        <!-- <p class="title is-4">John Smith</p> -->
-        <p class="subtitle is-6" id="username-profile">@dadegunle</p>
-      </div>
-    </div>
 
-    <div class="content">
-      Everything that happens is from now on. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#litbutnotthatkindalit</a>
-      <br>
-      <time datetime="2022-19-1">8:28 PM - 19 Jan 2022</time>
+      <div class="content">
+        Everything that happens is from now on. <a>@bulmaio</a>.
+        <a href="#">#css</a> <a href="#">#litbutnotthatkindalit</a>
+        <br>
+        <time datetime="2022-19-1">8:28 PM - 19 Jan 2022</time>
+      </div>
     </div>
   </div>
-</div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/javascripts/userProfile.js"></script>
-<script src="javascripts/logout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/javascripts/userProfile.js"></script>
+  <script src="javascripts/logout.js"></script>
 </body>
 
 </html>

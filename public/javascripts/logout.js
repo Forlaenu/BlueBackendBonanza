@@ -1,4 +1,4 @@
-const user = JSON.parse(localStorage.getItem('user'))
+user = JSON.parse(localStorage.getItem('user'))
 
 if (user) {
     const loggedIn = document.getElementsByClassName('logged-in')
