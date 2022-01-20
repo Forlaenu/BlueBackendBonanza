@@ -2,45 +2,44 @@
 
 <head>
   <title>Express</title>
-  <!-- <link rel="stylesheet" href="/stylesheets/style.css"/> -->
-  <link rel="stylesheet" href=" /stylesheets/gradient.css"/>
-  <link rel="stylesheet" href="/stylesheets/userProfile.css"/>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="./stylesheets/gradient.css" />
 </head>
 
 <body>
+  <!-- nav bar -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item gradient-text" href="https://bulma.io">(You)sedBooks
       </a>
-  
+
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-  
+
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item">
           Home
         </a>
-  
+
         <a class="navbar-item">
-          Documentation
+          Profile
         </a>
-  
+        <a class="navbar-item">
+          Search
+        </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More
           </a>
-  
+
           <div class="navbar-dropdown">
             <a class="navbar-item">
               About
-            </a>
-            <a class="navbar-item">
-              Jobs
             </a>
             <a class="navbar-item">
               Contact
@@ -52,7 +51,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
@@ -67,8 +66,16 @@
       </div>
     </div>
   </nav>
-</body>
-<div class="container">
-  <div class="library-card">content</div>
+  <!-- end of nav -->
+  <!-- header -->
+  <div class="title-circle">
+  <h1> welcome to (You)sedBooks!</h1>
+  <h2>books handled with care.</h2>
 </div>
+<!-- page layout -->
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/index.js"></script>
+</body>
+
 </html>
