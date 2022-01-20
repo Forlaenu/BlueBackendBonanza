@@ -5,7 +5,7 @@ const hardcoverFiction = `https://api.nytimes.com/svc/books/v3/lists/current/har
 const listNames = 'https://api.nytimes.com/svc/books/v3/lists/names.json'
 
 function getTopSellers() {
-    return axios.get(``, {
+    return axios.get(hardcoverFiction, {
         params: {
             'api-key': process.env.NYT_API_KEY,
         }

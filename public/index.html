@@ -10,7 +10,7 @@
   <!-- nav bar -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item gradient-text" href="https://bulma.io">(You)sedBooks
+      <a class="navbar-item gradient-text" href="/index.html">(You)sedBooks
       </a>
 
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -22,15 +22,15 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a href=index.html class="navbar-item">
           Home
         </a>
 
-        <a class="navbar-item">
-          Profile
-        </a>
-        <a class="navbar-item">
+        <a href=listing.html class="navbar-item">
           Search
+        </a>
+        <a href=userProfile.html class="navbar-item">
+          Profile
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
@@ -40,9 +40,6 @@
           <div class="navbar-dropdown">
             <a class="navbar-item">
               About
-            </a>
-            <a class="navbar-item">
-              Jobs
             </a>
             <a class="navbar-item">
               Contact
@@ -58,10 +55,10 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary">
+            <a href=signup.html class="button is-primary">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light">
+            <a href=login.html class="button is-light">
               Log in
             </a>
           </div>
@@ -73,7 +70,8 @@
   <!-- header -->
   <div class="title-circle">
   <h1> welcome to (You)sedBooks!</h1>
-  <h2>books handled with care.</h2>
+  <h2>books handled with care,</h2>
+  <h3>past and present</h3>
 </div>
 
   <!-- end of header -->
@@ -83,10 +81,10 @@
     <div class="tile">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child box">
+          <h1>Top Books of the Week</h1>
           <!-- Put any content you want --> 
-          <div class="box">
-            Top Books of the Week
-            <ul>
+          <div class="box" id="BOTW">
+            <ol id="results">
               <li> 1.</li>
               <li> 2.</li>
               <li> 3.</li>
@@ -97,7 +95,7 @@
               <li> 8.</li>
               <li> 9.</li>
               <li> 10.</li>
-            </ul>
+            </ol>
           </div>
         </article>
         <article class="tile is-child box">
@@ -105,15 +103,39 @@
           <article class="media">
             <figure class="media-left">
               <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+                <img src="/img/melol.png">
               </p>
             </figure>
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong>Desirree Adegunle</strong> <small>@</small> <small>31m</small>
+                  <strong>Desirree Adegunle</strong> <small>@dadegunle</small> <small>31m</small>
                   <br>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                  Toni Morrison could do what Faulkner did, but could Faulkner do what Toni does? ... no!
+                </p>
+              </div>
+              <p class="image is-64x64">
+                <img src="/img/cayden.jpeg">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>Cayden Cox</strong> <small>@Forlaenu</small> <small>21m</small>
+                  <br>
+                  Just finished this stupid book website project... 
+                </p>
+              </div>
+              <p class="image is-64x64">
+                <img src="/img/mayrasmaller.png">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>Mayra Estrella</strong> <small>@mayra84</small> <small>18m</small>
+                  <br>
+                  feeling existential while reading love in the time of cholera :'(
                 </p>
               </div>
               <nav class="level is-mobile">
@@ -131,7 +153,6 @@
               </nav>
             </div>
             <div class="media-right">
-              <button class="delete"></button>
             </div>
           </article>
         </article>
@@ -140,11 +161,13 @@
         <article class="tile is-child box">
           <!-- Put any content you want -->
           <h1>Book of the Week!</h1>
+          <div class="imgauthor" style="background-image: url(/img/love_in_the_time_of_cholera.jpeg)" id="lotsoffun">
         <figure class="image is-16by9">
-          <img src="https://bulma.io/images/placeholders/640x360.png">
+          <img src="https://bulma.io/images/placeholders/640x360.png" id="imgauthor";>
         </figure>
+      </div>
         <article class="message">
-        <div class="message-body">
+        <div class="message-body" id="bresults">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
         </div>
       </article>
@@ -157,7 +180,7 @@
         <footer class="footer">
           <div class="content has-text-centered">
             <p>
-              <strong>(You)sedBooks</strong> by <a href="https://jgthms.com">Mayra, Caden & Dess</a>.
+              <strong>(You)sedBooks</strong> by <a href="https://jgthms.com">Mayra, Cayden & Dess</a>.
             </p>
           </div>
         </footer>
@@ -166,6 +189,8 @@
   </div>
   <div class="tile is-parent">
     <article class="tile is-child box">
+      <figure class="image is-130x130">
+        <img src="img/flores.jpeg" id="imgauthor2";>
       <!-- Put any content you want -->
       <article class="message">
         <div class="message-body" id="AOTD">
