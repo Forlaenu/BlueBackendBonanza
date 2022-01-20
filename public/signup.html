@@ -10,7 +10,7 @@
     <!-- navbar -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item gradient-text" href="https://bulma.io">(You)sedBooks
+            <a class="navbar-item gradient-text" href="/index.html">(You)sedBooks
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -43,9 +43,6 @@
                             About
                         </a>
                         <a class="navbar-item">
-                            Jobs
-                        </a>
-                        <a class="navbar-item">
                             Contact
                         </a>
                         <hr class="navbar-divider">
@@ -71,18 +68,18 @@
         </div>
     </nav>
     <!-- form to sign up -->
-    <div id="registerDiv">
-        <form id="registerForm">
-            <h1>Register With (you)sedbooks!</h1>
+    <div id="container-fluid">
+        <form id="loginForm">
+            <h1>Register with (You)sedbooks!</h1>
             <p>
-                <label for="name">Username</label>
-                <input type="text" id="username" required />
+                <label for="username">Username</label>
+                <input type="username" id="username" required />
             </p>
             <p>
                 <label for="password">Password</label>
                 <input type="password" id="password" required />
             </p>
-            <button class="button is-light is-small" type="submit">Register</button>
+            <button class="button is-light is-small" type="submit">Login</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
