@@ -1,3 +1,10 @@
+const user = JSON.parse(localStorage.getItem('user'))
+
+
+
+
+
+
 // const { default: axios } = require("axios");
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -87,13 +94,19 @@ function renderBookInfo(listings) {
                             
                         </div>
                         <footer class="card-footer">
-                            <button id="addToFavesButton" class="add-to-faves" data-apiId="${listing.id}">Add to faves</button>
-                            <a href="#" class="card-footer-item" id="createListing">Create Listing</a>
-                        </footer>
-                    </div>
-                </div>
-        </div>
-`
+                        ${user ? `
+                        <a href="#" class="card-footer-item createListing" data-apiId="${listing.id}">Create Listing</a>
+                        <a href="#" class="card-footer-item addFaves" data-apiId="${listing.id}">Add to Favs</a>
+                        `:`
+                        logged-out
+                        `}
+                        
+                            </footer>
+                            </div>
+                            </div>
+                            </div>
+                            `
+
     }).join('')
     document.querySelector('#listings .columns').innerHTML = bookHtml
 }
@@ -135,10 +148,10 @@ searchButton.addEventListener('click', function (event) {
 
 // url = /books/
 
-const user = JSON.parse(localStorage.getItem('user'))
-if (!user) {
-    window.location = "/login.html"
-}
+
+// if (!user) {
+//     window.location = "/login.html"
+// }
 axios.get(`/users/${user.id}/Profile/listing`)
     .then(res => {
         try{

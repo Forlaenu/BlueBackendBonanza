@@ -182,20 +182,20 @@ li {
   padding-bottom: 100px;
   display: flex;
   justify-content: center;
-  align-content: center;
-  align-items: center;
+  /* align-content: center;
+  align-items: center; */
   flex-wrap: wrap;
   /* justify-content: space-around; */
 }
 
 .column {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   display: flex;
   justify-content: center;
-  align-content: center;
+  /* align-content: center;
   align-items: center;
-  
+   */
 }
 
 .is-info {
