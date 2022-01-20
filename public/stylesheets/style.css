@@ -240,6 +240,13 @@ img {
   font-size: 19.2px;
 }
 
+#addToFavesButton {
+  background: none !important;
+  border:none;
+  padding:0 !important;
+  cursor: pointer;
+}
+
 .button {
   font-family: 'Courier New', Courier, monospace !important;
   justify-content: center;
