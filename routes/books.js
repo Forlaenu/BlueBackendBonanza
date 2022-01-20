@@ -6,6 +6,7 @@ const axios = require('axios')
 const booksapi = require('../booksapi');
 const { get, redirect } = require('express/lib/response');
 const { getSummary } = require('../wikiapi');
+const { getTopSellers } = require('../newyorktimesapi');
 
 
 // GET /api/v1/books - searches for books and returns to client (frontend) (previously search)
@@ -53,11 +54,27 @@ router.get('/isbn', (req,res,next)=>{
   })// end .then on booksapi.search
 })// end router.get
 
+//get top selling books
+router.get('/BOTW', (req, res) => {
+  getTopSellers()
+  .then(data => {
+    res.json(data)
+  })
+})
+
 //Get summary of author
 router.get('/AOTD', (req, res) => {
-  getSummary('Toni Morrison')
+  getSummary('Fernando A. Flores')
   .then(summary => {
     res.json(summary)
+  })
+})
+
+// get the book of the week
+router.get('/TBOTW:id', (req, res) => {
+  getTopSellers()
+  .then(data => {
+    res.json(data)
   })
 })
 
@@ -165,6 +182,11 @@ router.post('/:apiId/listing', (req,res,next) => {
             own: false,
             BookId: createdBook.id,
             UserId: req.body.UserId,
+            // added this- mayra
+            condition: req.body.condition,
+            frontUrl: req.body.frontUrl,
+            backUrl: req.body.backUrl,
+            spineUrl: req.body.spineUrl,
             createdAt: new Date(),
             updatedAt: new Date()
           }) // end db.listing.create
@@ -180,6 +202,11 @@ router.post('/:apiId/listing', (req,res,next) => {
             own: false,
             BookId: foundBook.id,
             UserId: req.body.UserId,
+            // added this -mayra
+            condition: req.body.condition,
+            frontUrl: req.body.frontUrl,
+            backUrl: req.body.backUrl,
+            spineUrl: req.body.spineUrl,
             createdAt: new Date(),
             updatedAt: new Date()
           }) // end db.listing.create

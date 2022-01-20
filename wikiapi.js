@@ -2,10 +2,10 @@ const wiki = require('wikijs').default;
 
 function getSummary(name) {
     return wiki()
-        .page('Toni Morrison')
+        .page('Fernando A. Flores')
         .then(page => page.summary())
         .then(summary => {
-            let trimmed = summary.substring(0, 1000) + "...";
+            let trimmed = summary.substring(0, 2000) + "...";
             return {
                 summary: trimmed,
                 name: name

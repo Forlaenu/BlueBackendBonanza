@@ -23,12 +23,19 @@ h1 {
   font-size: xx-large;
   font-weight: bolder;
   color: inherit  !important;
+  text-align: center;
+  text-decoration: underline;
 }
 
 h2 {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
   color: inherit !important;
+  text-align: center;
+}
+
+li {
+  text-align: center;
 }
 
 .title-circle {
@@ -177,10 +184,13 @@ h2 {
   justify-content: center;
   align-content: center;
   align-items: center;
+  flex-wrap: wrap;
   /* justify-content: space-around; */
 }
 
 .column {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -213,6 +223,10 @@ img {
 } */
 
 .card-footer-item {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
   border-style:solid;
   border-radius: 0px 0px 0px 0px;
   border-width: 2px;
@@ -231,4 +245,49 @@ img {
   border:none;
   padding:0 !important;
   cursor: pointer;
+}
+
+.button {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+}
+
+#createListing {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+}
+#addFavs {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+
+.imgauthor  img{
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+  object-position: center center;
+ 
+}
+
+.imgauthor{
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+.imgauthor::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+#counter {
+  background-color:#ffe8d6;
+
 }
