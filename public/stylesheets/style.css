@@ -177,10 +177,13 @@ h2 {
   justify-content: center;
   align-content: center;
   align-items: center;
+  flex-wrap: wrap;
   /* justify-content: space-around; */
 }
 
 .column {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -213,6 +216,10 @@ img {
 } */
 
 .card-footer-item {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
   border-style:solid;
   border-radius: 0px 0px 0px 0px;
   border-width: 2px;
@@ -224,4 +231,20 @@ img {
 
 #bookPicLabel {
   font-size: 19.2px;
+}
+.button {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+}
+
+#createListing {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
+}
+#addFavs {
+  font-family: 'Courier New', Courier, monospace !important;
+  justify-content: center;
+  align-items: center;
 }
